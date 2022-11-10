@@ -7,10 +7,13 @@ from datetime import datetime, date, time
 
 # Connect to MONGODB
 load_dotenv(find_dotenv())
-password = os.environ.get("MONGODB_PWD")
-connection_string = f"mongodb+srv://newreality:{password}@cluster0.jc2svp8.mongodb.net/test?retryWrites=true&w=majority"
-client = MongoClient(connection_string)
 
+# password = os.environ.get("MONGODB_PWD")
+# login = os.environ.get("MONGODB_LOGIN")
+# connection_string = f"mongodb+srv://{login}:{password}@cluster0.jc2svp8.mongodb.net/test?retryWrites=true&w=majority"
+
+connection_string = "mongodb+srv://<login>:<password>@cluster0.jc2svp8.mongodb.net/test"
+client = MongoClient(connection_string)
 new_db = client["mydatabase"]
 
 class Employees:
